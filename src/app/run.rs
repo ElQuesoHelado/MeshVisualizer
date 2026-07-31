@@ -21,10 +21,10 @@ impl App {
 
         //state.simulation.rain.update(&mut state.scene, 0.11f32);
 
-        state
-            .simulation
-            .ocean
-            .update(&mut state.scene.normal_instances, state.time);
+        // state
+        //     .simulation
+        //     .ocean
+        //     .update(&mut state.scene.normal_instances, state.time);
 
         state.graph_ctx.clear();
         state.standard_renderer.draw(
@@ -40,13 +40,13 @@ impl App {
             &state.camera,
         );
 
-        state.ocean_renderer.draw(
-            &state.graph_ctx,
-            &state.scene.ocean_instances,
-            &state.camera,
-            &state.light,
-            state.time,
-        );
+        // state.ocean_renderer.draw(
+        //     &state.graph_ctx,
+        //     &state.scene.ocean_instances,
+        //     &state.camera,
+        //     &state.light,
+        //     state.time,
+        // );
 
         let identity = glam::Mat4::IDENTITY;
         // state.floor_giz_renderer.draw(

@@ -108,7 +108,7 @@ impl App {
         // Simulation
         //*************************
 
-        let simulation = Simulation::new(&mut scene, &texture_library, &mesh_library);
+        // let simulation = Simulation::new(&mut scene, &texture_library, &mesh_library);
 
         //*************************
         // Renderers
@@ -121,16 +121,16 @@ impl App {
         )
         .expect("Creacion de Renderer Standard fallida");
 
-        let ocean_renderer = OceanRenderer::new(
-            &gl,
-            "assets/shaders/ocean.vert",
-            "assets/shaders/normal_shape.frag",
-            &simulation.ocean.waves,
-            &mut scene,
-            &texture_library,
-            &mesh_library,
-        )
-        .expect("Creacion de Renderer Ocean fallida");
+        // let ocean_renderer = OceanRenderer::new(
+        //     &gl,
+        //     "assets/shaders/ocean.vert",
+        //     "assets/shaders/normal_shape.frag",
+        //     &simulation.ocean.waves,
+        //     &mut scene,
+        //     &texture_library,
+        //     &mesh_library,
+        // )
+        // .expect("Creacion de Renderer Ocean fallida");
 
         let billboard_renderer = BillboardRenderer::new(
             &gl,
@@ -179,7 +179,7 @@ impl App {
             gl_context,
             gl_surface,
             standard_renderer,
-            ocean_renderer,
+            ocean_renderer: None,
             billboard_renderer,
             floor_giz_renderer,
             skybox_renderer,
@@ -193,7 +193,7 @@ impl App {
             camera,
             floor_gizmo,
             light,
-            simulation,
+            simulation: None,
             ui_ctx: UiContext {
                 imgui_ctx,
                 platform,
